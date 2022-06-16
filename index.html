@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+
+    <!-- Highlight.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css"
+    />
+
+    <title>Sort/Filter tast</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>Курсы (исходник):</h2>
+      <pre>
+<code class="courses language-javascript"></code>
+      </pre>
+
+      <h2>Функция сортировки курсов по цене:</h2>
+      <ul>
+        <li>
+          Cтоимость курса <b>от число до число</b> - в сортировке участвует по
+          нижней границе стоимости (первое число)
+        </li>
+        <li>
+          Cтоимость курса <b>от число и до null</b> - в сортировке участвует по
+          нижней границе стоимости (первое число)
+        </li>
+        <li>
+          Cтоимость курса <b>от null и до число</b> - в сортировке участвует
+          второе значение, так как первое неизвестно, но не может быть больше
+          второго
+        </li>
+        <li>
+          Cтоимость курса <b>от null и до null</b> - в самый низ списка
+          (неизвестна стоимость)
+        </li>
+      </ul>
+
+      <button class="sort-function-toggle btn btn-success">
+        показать функцию
+      </button>
+
+      <pre>
+
+<code class="sort-function language-javascript" hidden></code></pre>
+
+      <h3>Результат сортировки:</h3>
+      <pre>
+<code class="courses-sort language-javascript"></code>
+      </pre>
+
+      <h2>Функция фильтрации курсов</h2>
+      <p>
+        В ТЗ не был указан алгоритм интерпретации значения null,
+        запрограммирована следующая логика работы функции:
+      </p>
+      <ul>
+        <li>
+          <b>null для фильтра</b> - пустое значение (пользователь не ввел
+          значение, удалил ввод)
+        </li>
+        <li>
+          <b>[null, null] для курса</b> - стоимость курса не указана <br />
+          (cтоимость курса не указана - это не меньше и не больше, курсы с ней
+          фигурируют в результатах, если другое значение (число) не убирает
+          значение по результатам фильтрации)
+        </li>
+      </ul>
+
+      <button class="filter-function-toggle btn btn-success">
+        показать функцию
+      </button>
+
+      <pre>
+
+<code class="filter-function" hidden></code></pre>
+
+      <h3>Результат выполнения тестового задания по фильтрации курсов:</h3>
+
+      <div class="filter-examples"></div>
+
+      <footer>
+        <ul>
+          <li>
+            GitHub:
+            <a href="https://github.com/vitalii-siziakov">vitalii-siziakov</a>
+          </li>
+          <li>
+            Telegram:
+            <a href="https://t.me/vitalii_siziakov">@vitalii_siziakov</a>
+          </li>
+          <li>
+            E-mail:
+            <a href="mailto:vitalii.siziakov@gmail.com"
+              >vitalii.siziakov@gmail.com</a
+            >
+          </li>
+        </ul>
+
+        <b><time datetime="2022">2022</time></b>
+      </footer>
+    </div>
+
+    <script src="./modules/values.js"></script>
+    <script src="./modules/sortCourses.js"></script>
+    <script src="./modules/filterCourses.js"></script>
+    <script src="./modules/renderTaskUtils.js"></script>
+    <script src="./modules/renderTask.js"></script>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+    <script>
+      hljs.highlightAll()
+    </script>
+  </body>
+</html>
